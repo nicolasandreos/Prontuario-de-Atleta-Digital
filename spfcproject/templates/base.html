@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Sistema SPFC</title>
+    <title>Prontuário Digital</title>
     <link rel="icon" href="{{ url_for('static', filename='fotos_gerais/favicon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="../static/base.css">
 
     {% block head %}
     {% endblock %}
@@ -34,9 +35,9 @@
         setTimeout(function() {
             let mensagens = document.querySelectorAll(".flash-message");
             mensagens.forEach(function(msg) {
-                msg.style.transition = "opacity 0.5s ease"; // Adiciona um efeito suave
-                msg.style.opacity = "0"; // Faz a mensagem desaparecer
-                setTimeout(() => msg.remove(), 500); // Remove do DOM após o fade-out
+                msg.style.transition = "opacity 0.5s ease"; 
+                msg.style.opacity = "0"; 
+                setTimeout(() => msg.remove(), 500); 
             });
         }, 3000);
     </script>
