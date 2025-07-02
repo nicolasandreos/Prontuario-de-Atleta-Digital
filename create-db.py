@@ -1,5 +1,5 @@
-from spfcproject import app, database
-from spfcproject.models import Usuario
+from prontuariodigital import app, database
+from prontuariodigital.models import Usuario
 
 # Executar esse codigo abaixo para criar um usuário
 with app.app_context():

@@ -1,0 +1,357 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block body %}
+<body>
+<div class="container d-flex justify-content-center align-items-center mt-4">
+    <div class="w-75 p-4 shadow bg-light" style="border-radius: 35px">  <
+        
+        <div class="d-flex align-items-center justify-content-center gap-4">
+            <img src="{{ url_for('static', filename='fotos_gerais/favicon.png') }}" alt="Logo" class="logo">
+            <h1>CADASTRO DE PACIENTE</h1>
+        </div>
+        <div class="mb-3 linha-divisoria"></div>
+
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form_edicao_paciente.csrf_token }}
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {% if form_edicao_paciente.nome_completo.errors %}
+                            {{ form_edicao_paciente.nome_completo(class="form-control is-invalid") }}
+                            <div class="invalid-feedback mb-4">
+                                {% for erro in form_edicao_paciente.nome_completo.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="input-group mb-4 mt-4">
+                                {{ form_edicao_paciente.nome_completo(class="form-control", placeholder='Nome Completo do Paciente') }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div> 
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {% if form_edicao_paciente.data_nascimento.errors %}
+                            {{ form_edicao_paciente.data_nascimento(class="form-control is-invalid") }}
+                            <div class="invalid-feedback mb-4">
+                                {% for erro in form_edicao_paciente.data_nascimento.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="input-group mb-4 mt-4">
+                                {{ form_edicao_paciente.data_nascimento(class="form-control") }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div> 
+            </div> 
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {% if form_edicao_paciente.genero.errors %}
+                            {{ form_edicao_paciente.genero(class="form-control is-invalid") }}
+                            <div class="invalid-feedback mb-4">
+                                {% for erro in form_edicao_paciente.genero.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="input-group mb-4">
+                                {{ form_edicao_paciente.genero(class="form-control") }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {% if form_edicao_paciente.telefone.errors %}
+                            {{ form_edicao_paciente.telefone(class="form-control is-invalid") }}
+                            <div class="invalid-feedback mb-4">
+                                {% for erro in form_edicao_paciente.telefone.errors %}
+                                    {{ erro }}
+                                 {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="input-group mb-4">
+                                {{ form_edicao_paciente.telefone(class="form-control", placeholder="Telefone DDD + número") }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {% if form_edicao_paciente.email.errors %}
+                            {{ form_edicao_paciente.email(class="form-control is-invalid") }}
+                            <div class="invalid-feedback mb-4">
+                                {% for erro in form_edicao_paciente.email.errors %}
+                                    {{ erro }}
+                                 {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="input-group mb-4">
+                                {{ form_edicao_paciente.email(class="form-control", placeholder="E-mail") }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {% if form_edicao_paciente.endereco.errors %}
+                            {{ form_edicao_paciente.endereco(class="form-control is-invalid") }}
+                            <div class="invalid-feedback mb-4">
+                                {% for erro in form_edicao_paciente.endereco.errors %}
+                                    {{ erro }}
+                                 {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="input-group mb-4">
+                                {{ form_edicao_paciente.endereco(class="form-control", placeholder="Endereco") }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {% if form_edicao_paciente.cpf.errors %}
+                            {{ form_edicao_paciente.cpf(class="form-control is-invalid") }}
+                            <div class="invalid-feedback mb-4">
+                                {% for erro in form_edicao_paciente.cpf.errors %}
+                                    {{ erro }}
+                                 {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="input-group mb-4">
+                                {{ form_edicao_paciente.cpf(class="form-control", placeholder="CPF (Sem Digitos)") }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {% if form_edicao_paciente.rg.errors %}
+                            {{ form_edicao_paciente.rg(class="form-control is-invalid") }}
+                            <div class="invalid-feedback mb-4">
+                                {% for erro in form_edicao_paciente.rg.errors %}
+                                    {{ erro }}
+                                 {% endfor %}
+                            </div>
+                        {% else %}
+                            <div class="input-group mb-4">
+                                {{ form_edicao_paciente.rg(class="form-control", placeholder="RG (Sem Digitos)") }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            
+                <div class="row mt-4 mb-4">
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="upload-container">
+                                <label for="file-upload" class="form-label fw-bold">Avaliação Médica</label>
+                                <div class="border rounded text-center p-4 drop-zone">
+                                    <p class="mb-1">Arraste e solte o arquivo aqui</p>
+                                    <p class="mb-1">ou</p>
+                                    <p>Clique para selecionar</p>
+                                    {{ form_edicao_paciente.avaliacao_medica(class="form-control d-none", id="file-upload") }}
+                                </div>
+                                
+                                <span id="file-name" class="text-muted mt-2 d-block">
+                                    {% if form_edicao_paciente.avaliacao_medica.data %}
+                                        {{ form_edicao_paciente.avaliacao_medica }}
+                                    {% endif %}
+                                </span>
+
+                                {% if form_edicao_paciente.avaliacao_medica.errors %}
+                                    {% for erro in form_edicao_paciente.avaliacao_medica.errors %}
+                                        <span class="text-danger">{{ erro }}</span><br>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if paciente.avaliacao_medica %}
+                                <a href="{{ url_for('static', filename='pacientes/' + paciente.nome_completo|replace(' ', '_') + '/Av. Medica/' + paciente.avaliacao_medica) }}"
+                                    download
+                                    class="file-box mt-2 text-decoration-none">
+                                    <i class="fas fa-file-word text-primary"></i>
+                                    <span class="file-name" title="{{ paciente.avaliacao_medica }}">{{ paciente.avaliacao_medica }}</span>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="upload-container">
+                                <label for="file-upload" class="form-label fw-bold">Evolução Clínica</label>
+                                <div class="border rounded text-center p-4 drop-zone">
+                                    <p class="mb-1">Arraste e solte o arquivo aqui</p>
+                                    <p class="mb-1">ou</p>
+                                    <p>Clique para selecionar</p>
+                                    {{ form_edicao_paciente.evolucao_clinica(class="form-control d-none", id="file-upload") }}
+                                </div>
+                                
+                                <span id="file-name" class="text-muted mt-2 d-block">
+                                    {% if form_edicao_paciente.evolucao_clinica.data %}
+                                        {{ form_edicao_paciente.evolucao_clinica }}
+                                    {% endif %}
+                                </span>
+
+                                {% if form_edicao_paciente.evolucao_clinica.errors %}
+                                    {% for erro in form_edicao_paciente.evolucao_clinica.errors %}
+                                        <span class="text-danger">{{ erro }}</span><br>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if paciente.evolucao_clinica %}
+                                <a href="{{ url_for('static', filename='pacientes/' + paciente.nome_completo|replace(' ', '_') + '/Ev. Clinica/' + paciente.evolucao_clinica) }}"
+                                    download
+                                    class="file-box mt-2 text-decoration-none">
+                                    <i class="fas fa-file-word text-primary"></i>
+                                    <span class="file-name" title="{{ paciente.evolucao_clinica }}">{{ paciente.evolucao_clinica }}</span>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="upload-container">
+                                <label for="file-upload" class="form-label fw-bold">Exames</label>
+                                <div class="border rounded text-center p-4 drop-zone">
+                                    <p class="mb-1">Arraste e solte o arquivo aqui</p>
+                                    <p class="mb-1">ou</p>
+                                    <p>Clique para selecionar</p>
+                                    {{ form_edicao_paciente.exames(class="form-control d-none", id="file-upload") }}
+                                </div>
+                                
+                                <span id="file-name" class="text-muted mt-2 d-block">
+                                    {% if form_edicao_paciente.exames.data %}
+                                        {{ form_edicao_paciente.exames }}
+                                    {% endif %}
+                                </span>
+
+                                {% if form_edicao_paciente.exames.errors %}
+                                    {% for erro in form_edicao_paciente.exames.errors %}
+                                        <span class="text-danger">{{ erro }}</span><br>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if paciente.exames %}
+                                <a href="{{ url_for('static', filename='pacientes/' + paciente.nome_completo|replace(' ', '_') + '/Exames/' + paciente.exames) }}"
+                                    download
+                                    class="file-box mt-2 text-decoration-none">
+                                    <i class="fas fa-file-word text-primary"></i>
+                                    <span class="file-name" title="{{ paciente.exames }}">{{ paciente.exames }}</span>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="upload-container">
+                                <label for="file-upload" class="form-label fw-bold">Documentos Pessoais</label>
+                                <div class="border rounded text-center p-4 drop-zone">
+                                    <p class="mb-1">Arraste e solte o arquivo aqui</p>
+                                    <p class="mb-1">ou</p>
+                                    <p>Clique para selecionar</p>
+                                    {{ form_edicao_paciente.documentos_pessoais(class="form-control d-none", id="file-upload") }}
+                                </div>
+                                
+                                <span id="file-name" class="text-muted mt-2 d-block">
+                                    {% if form_edicao_paciente.documentos_pessoais.data %}
+                                        {{ form_edicao_paciente.documentos_pessoais }}
+                                    {% endif %}
+                                </span>
+
+                                {% if form_edicao_paciente.documentos_pessoais.errors %}
+                                    {% for erro in form_edicao_paciente.documentos_pessoais.errors %}
+                                        <span class="text-danger">{{ erro }}</span><br>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if paciente.documentos_pessoais %}
+                                <a href="{{ url_for('static', filename='pacientes/' + paciente.nome_completo|replace(' ', '_') + '/Documentos Pessoais/' + paciente.documentos_pessoais) }}"
+                                    download
+                                    class="file-box mt-2 text-decoration-none">
+                                    <i class="fas fa-file-word text-primary"></i>
+                                    <span class="file-name" title="{{ paciente.documentos_pessoais }}">{{ paciente.documentos_pessoais }}</span>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="text-center d-flex gap-2">
+                {{ form_edicao_paciente.botao_editar_paciente(class="btn btn-custom w-100") }}
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".drop-zone").forEach(function (dropZone) {
+        let fileInput = dropZone.querySelector("input[type='file']");
+        let fileNameDisplay = dropZone.nextElementSibling; 
+
+        dropZone.addEventListener("dragover", function (event) {
+            event.preventDefault();
+            dropZone.classList.add("dragover");
+        });
+
+        dropZone.addEventListener("dragleave", function () {
+            dropZone.classList.remove("dragover");
+        });
+
+        dropZone.addEventListener("drop", function (event) {
+            event.preventDefault();
+            dropZone.classList.remove("dragover");
+
+            let file = event.dataTransfer.files[0];
+            if (file) {
+                fileInput.files = event.dataTransfer.files;
+                fileNameDisplay.textContent = file.name; 
+            }
+        });
+
+        fileInput.addEventListener("change", function () {
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = fileInput.files[0].name;
+            }
+        });
+
+        dropZone.addEventListener("click", function () {
+            fileInput.click();
+        });
+    });
+});
+
+
+</script>
+
+</body>
+{% endblock %}
