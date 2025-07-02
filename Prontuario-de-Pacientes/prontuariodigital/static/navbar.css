@@ -1,0 +1,42 @@
+#barraNavegacao {
+    box-shadow: rgba(0, 0, 0, 0.144) 0px 10px 15px;
+    width: 100%; 
+    margin: 0 auto; 
+    background-color: white;
+    z-index: 40;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+
+.navbar-links {
+    font-family: Calibri, sans-serif;
+    font-weight: 900;
+    color: rgb(53, 53, 53);
+    font-size: 21px; 
+    letter-spacing: 0px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-links:hover {
+    color: #668576;
+    padding: 8px 0; 
+    font-size: 23px;
+}
+
+@media (max-width: 768px) {
+    #barraNavegacao {
+        width: 100%;
+        padding: 5px 0; 
+    }
+
+    .navbar-links {
+        font-size: 16px; 
+        padding: 6px 12px; 
+    }
+}
+
+body {
+    overflow-x: hidden; 
+}

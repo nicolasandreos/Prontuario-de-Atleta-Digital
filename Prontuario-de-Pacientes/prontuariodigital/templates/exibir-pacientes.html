@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='exibirpaciente.css') }}">
+{% endblock %}
+
+{% block body %}
+    <body>
+        <div class="main-content">
+
+            <div class="container mt-3">
+                <form class="" role="search" method="GET" action="{{ url_for('exibir_pacientes') }}">
+                    <input class="form-control mb-3 mt-5" list="datalistOptions" id="exampleDataList" name="busca" placeholder="Nome do Paciente">
+                    <datalist id="datalistOptions">
+                        {% for paciente in pacientes %}
+                            <option value="{{ paciente.nome_completo }}">
+                        {% endfor %}
+                    </datalist>
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+
+            {% if pacientes and not pacientes_filtrados %}
+                <div class="container mt-5 d-flex justify-content-center">
+                    <div class="table-responsive">
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome Completo</th>
+                                    <th>Data de Nascimento</th>
+                                    <th>CPF</th>
+                                    <th>Email</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for paciente in pacientes %}
+                                <tr>
+                                    <td>{{ paciente.nome_completo.title() }}</td>
+                                    <td>{{ paciente.data_nascimento[8:10] }}/{{ paciente.data_nascimento[5:7] }}/{{ paciente.data_nascimento[:4] }}</td>
+                                    <td>{{ paciente.cpf[:3] }}.{{ paciente.cpf[3:6] }}.{{ paciente.cpf[6:9] }}-{{ paciente.cpf[9:] }}</td>
+                                    <td>{{ paciente.email }}</td>
+                                    <td>
+                                        <a href="{{ url_for('edicao_paciente', id=paciente.id) }}" class="btn btn-editar btn-sm">
+                                            Alterar
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ url_for('excluir_paciente', id=paciente.id) }}" class="btn btn-excluir btn-sm" data-bs-toggle="modal" data-bs-target="#confirmacaoExclusao-{{ paciente.id }}">
+                                            Excluir
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- Modal de Confirmação para cada paciente -->
+                            <div class="modal fade" id="confirmacaoExclusao-{{ paciente.id }}" tabindex="-1" aria-labelledby="modalLabel-{{ paciente.id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="modalLabel-{{ paciente.id }}">Confirmar Exclusão</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    Você quer realmente excluir {{ paciente.nome_completo }}? Essa ação não pode ser desfeita.
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <form method="POST" action="{{ url_for('excluir_paciente', id=paciente.id) }}">
+                                        <button type="submit" class="btn btn-excluir">Excluir</button>
+                                    </form>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% elif pacientes_filtrados %}
+                <div class="container mt-5 d-flex justify-content-center">
+                    <div class="table-responsive">
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome Completo</th>
+                                    <th>Data de Nascimento</th>
+                                    <th>CPF</th>
+                                    <th>Email</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for paciente in pacientes_filtrados %}
+                                <tr>
+                                    <td>{{ paciente.nome_completo.title() }}</td>
+                                    <td>{{ paciente.data_nascimento[8:10] }}/{{ paciente.data_nascimento[5:7] }}/{{ paciente.data_nascimento[:4] }}</td>
+                                    <td>{{ paciente.cpf[:3] }}.{{ paciente.cpf[3:6] }}.{{ paciente.cpf[6:9] }}-{{ paciente.cpf[9:] }}</td>
+                                    <td>{{ paciente.email }}</td>
+                                    <td>
+                                        <a href="{{ url_for('edicao_paciente', id=paciente.id) }}" class="btn btn-editar btn-sm">
+                                            Alterar
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ url_for('excluir_paciente', id=paciente.id) }}" class="btn btn-excluir btn-sm" data-bs-toggle="modal" data-bs-target="#confirmacaoExclusao-{{ paciente.id }}">
+                                            Excluir
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- Modal de Confirmação para cada paciente -->
+                            <div class="modal fade" id="confirmacaoExclusao-{{ paciente.id }}" tabindex="-1" aria-labelledby="modalLabel-{{ paciente.id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="modalLabel-{{ paciente.id }}">Confirmar Exclusão</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    Você quer realmente excluir {{ paciente.nome_completo }}? Essa ação não pode ser desfeita.
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <form method="POST" action="{{ url_for('excluir_paciente', id=paciente.id) }}">
+                                        <button type="submit" class="btn btn-excluir">Excluir</button>
+                                    </form>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="container mt-5 text-center">
+                    <h3>Cadastre um paciente para visualizar.</h3>
+                </div>
+            {% endif %}
+        </div>
+
+        <footer class="footer mt-5 py-3 bg-light text-center border-top">
+            <div class="container">
+                <p class="mb-0 text-muted">© 2025 Sistema de Prontuário Digital</p>
+                <p class="mb-0 text-muted">Desenvolvido para fins educacionais e demonstrativos</p>
+            </div>
+        </footer>
+
+
+    </body>
+{% endblock %}
