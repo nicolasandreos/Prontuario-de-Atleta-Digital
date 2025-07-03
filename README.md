@@ -1,4 +1,3 @@
-```
 # 🗂️ Sistema de Prontuário de Pacientes
 
 Sistema de prontuário eletrônico para clínicas e profissionais da saúde, desenvolvido com Flask e foco em usabilidade e organização de dados médicos.
@@ -25,8 +24,6 @@ A aplicação permite cadastrar, editar, excluir e buscar prontuários (CRUD), a
 
 ## 📁 Estrutura de Pastas
 
-```
-
 Prontuario-de-Pacientes/
 ├── static/
 │   ├── css/
@@ -46,7 +43,6 @@ Prontuario-de-Pacientes/
 ├── requirements.txt
 └── README.md
 
-````
 
 ## 📸 Imagens
 
