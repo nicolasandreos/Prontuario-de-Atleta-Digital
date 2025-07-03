@@ -1,8 +1,4 @@
-Perfeito! Aqui está o `README.md` atualizado com todas as melhorias solicitadas, **sem o badge**, mantendo o visual limpo e profissional:
-
----
-
-```markdown
+```
 # 🗂️ Sistema de Prontuário de Pacientes
 
 Sistema de prontuário eletrônico para clínicas e profissionais da saúde, desenvolvido com Flask e foco em usabilidade e organização de dados médicos.
