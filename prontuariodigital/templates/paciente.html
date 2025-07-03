@@ -3,6 +3,7 @@
 {% block head %}
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -12,7 +13,7 @@
         
         <div class="d-flex align-items-center justify-content-center gap-4">
             <img src="{{ url_for('static', filename='fotos_gerais/favicon.png') }}" alt="Logo" class="logo">
-            <h1>CADASTRO DE PACIENTE</h1>
+            <h1>EDIÇÃO DE PACIENTE</h1>
         </div>
         <div class="mb-3 linha-divisoria"></div>
 
