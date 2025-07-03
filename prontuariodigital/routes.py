@@ -66,7 +66,7 @@ def exibir_pacientes():
 
 
 
-@app.route('/login',  methods= ['GET', 'POST'])
+@app.route('/',  methods= ['GET', 'POST'])
 def login():
     form_loginspfc = FormLogin()
     if form_loginspfc.validate_on_submit():
