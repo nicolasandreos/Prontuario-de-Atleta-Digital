@@ -22,11 +22,12 @@ A aplicação permite cadastrar, editar, excluir e buscar prontuários(CRUD), al
 
 ## 📸 Imagens
 
-> *(Adicione imagens na pasta `screenshots/` e atualize os caminhos abaixo)*
-
 ![Login](screenshots/login.png)
-![Lista de Prontuários](screenshots/lista_prontuarios.png)
-![Formulário](screenshots/formulario.png)
+![Cadastro de Pacientes](screenshots/cadastro-paciente.png)
+![Lista de Prontuários](screenshots/lista-pacientes)
+![Campo de busca](screenshots/busca.png)
+![Edição de Pacientes](screenshots/edicao.png)
+![Exclusão de Pacientes](screenshots/exclusao.png)
 
 ## 🧪 Como executar o projeto localmente
 
@@ -89,5 +90,3 @@ Siga os passos abaixo para rodar o projeto no seu ambiente:
    Acesse o sistema através do link gerado no terminal (geralmente `http://127.0.0.1:5000`).
 
 ---
-
-Se quiser, posso te gerar uma versão já formatada com markdown para você colar direto. Deseja isso também?
