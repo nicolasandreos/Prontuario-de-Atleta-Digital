@@ -25,13 +25,13 @@ A aplicação permite cadastrar, editar, excluir e buscar prontuários(CRUD), al
 ## Arquivos
 - `main.py`: Arquivo principal que inicia o servidor Flask.
 - `create-db.py`: Cria o banco de dados e um usuário padrão.
-- `spfcproject/`: Pasta com a lógica principal do sistema.
+- `prontuariodigital/`: Pasta com a lógica principal do sistema.
   - `routes.py`: Define as rotas do sistema.
   - `models.py`: Define os modelos do banco de dados.
   - `forms.py`: Define os formulários do sistema.
   - `__init__.py`: Inicializa o app Flask e configurações.
-- `templates/`: Contém os arquivos HTML do frontend.
-- `static/`: Contém arquivos estáticos (CSS, imagens).
+  - `templates/`: Contém os arquivos HTML do frontend.
+  - `static/`: Contém arquivos estáticos (CSS, imagens).
 
 ## 📸 Imagens
 
