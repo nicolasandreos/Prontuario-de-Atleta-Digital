@@ -1,7 +1,14 @@
+Perfeito! Aqui está o `README.md` atualizado com todas as melhorias solicitadas, **sem o badge**, mantendo o visual limpo e profissional:
+
+---
+
+```markdown
 # 🗂️ Sistema de Prontuário de Pacientes
 
-Sistema web responsivo desenvolvido com o objetivo de gerenciar prontuários de pacientes de forma simples, organizada e acessível.
-A aplicação permite cadastrar, editar, excluir e buscar prontuários(CRUD), além de fazer upload e download de documentos.
+Sistema de prontuário eletrônico para clínicas e profissionais da saúde, desenvolvido com Flask e foco em usabilidade e organização de dados médicos.
+
+Sistema web responsivo desenvolvido com o objetivo de gerenciar prontuários de pacientes de forma simples, organizada e acessível.  
+A aplicação permite cadastrar, editar, excluir e buscar prontuários (CRUD), além de fazer upload e download de documentos.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -20,18 +27,38 @@ A aplicação permite cadastrar, editar, excluir e buscar prontuários(CRUD), al
 * ✅ Filtro por nome com campo de busca para localizar prontuários
 * ✅ Interface responsiva para dispositivos móveis e desktops
 
+## 📁 Estrutura de Pastas
+
+```
+
+Prontuario-de-Pacientes/
+├── static/
+│   ├── css/
+│   ├── fotos\_gerais/
+│   └── ...
+├── templates/
+│   ├── base.html
+│   ├── login.html
+│   └── ...
+├── spfcproject/
+│   ├── **init**.py
+│   ├── routes.py
+│   ├── forms.py
+│   └── models.py
+├── main.py
+├── create-db.py
+├── requirements.txt
+└── README.md
+
+````
+
 ## 📸 Imagens
 
-![Login](screenshots/login.png)
-
-![Cadastro de Pacientes](screenshots/cadastro-paciente.png)
-
-![Lista de Prontuários](screenshots/lista-pacientes.png)
-
-![Campo de busca](screenshots/busca.png)
-
-![Edição de Pacientes](screenshots/edicao.png)
-
+![Login](screenshots/login.png)  
+![Cadastro de Pacientes](screenshots/cadastro-paciente.png)  
+![Lista de Prontuários](screenshots/lista-pacientes.png)  
+![Campo de busca](screenshots/busca.png)  
+![Edição de Pacientes](screenshots/edicao.png)  
 ![Exclusão de Pacientes](screenshots/exclusao.png)
 
 ## 🧪 Como executar o projeto localmente
@@ -44,21 +71,21 @@ Siga os passos abaixo para rodar o projeto no seu ambiente:
 
    ```bash
    python -m venv venv
-   ```
+````
 
-   Ative o ambiente virtual:
+Ative o ambiente virtual:
 
-   * No **Windows** (cmd ou PowerShell):
+* No **Windows** (cmd ou PowerShell):
 
-     ```bash
-     venv\Scripts\activate
-     ```
+  ```bash
+  venv\Scripts\activate
+  ```
 
-   > ⚠️ Se a execução estiver desabilitada no PowerShell, execute:
-   >
-   > ```powershell
-   > Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-   > ```
+> ⚠️ Se a execução estiver desabilitada no PowerShell, execute:
+>
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
 
 3. **Clone este repositório (requer o Git instalado):**
 
@@ -95,3 +122,14 @@ Siga os passos abaixo para rodar o projeto no seu ambiente:
    Acesse o sistema através do link gerado no terminal (geralmente `http://127.0.0.1:5000`).
 
 ---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a licença [MIT](LICENSE).
+
+```
+
+---
+
+Se quiser, posso gerar esse arquivo e te enviar para você só colar no projeto. Deseja isso também?
+```
