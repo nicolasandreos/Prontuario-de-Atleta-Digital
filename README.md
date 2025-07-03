@@ -23,10 +23,15 @@ A aplicação permite cadastrar, editar, excluir e buscar prontuários(CRUD), al
 ## 📸 Imagens
 
 ![Login](screenshots/login.png)
+
 ![Cadastro de Pacientes](screenshots/cadastro-paciente.png)
-![Lista de Prontuários](screenshots/lista-pacientes)
+
+![Lista de Prontuários](screenshots/lista-pacientes.png)
+
 ![Campo de busca](screenshots/busca.png)
+
 ![Edição de Pacientes](screenshots/edicao.png)
+
 ![Exclusão de Pacientes](screenshots/exclusao.png)
 
 ## 🧪 Como executar o projeto localmente
