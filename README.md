@@ -22,26 +22,25 @@ A aplicação permite cadastrar, editar, excluir e buscar prontuários(CRUD), al
 * ✅ Filtro por nome com campo de busca para localizar prontuários
 * ✅ Interface responsiva para dispositivos móveis e desktops
 
-## 📁 Estrutura de Pastas
-
-Prontuario-de-Pacientes/
+## 📁 Prontuario-de-Pacientes/
 ├── static/
-│ ├── css/
-│ ├── fotos_gerais/
-│ └── ...
+│   ├── css/
+│   ├── fotos_gerais/
+│   └── ...
 ├── templates/
-│ ├── base.html
-│ ├── login.html
-│ └── ...
+│   ├── base.html
+│   ├── login.html
+│   └── ...
 ├── spfcproject/
-│ ├── init.py
-│ ├── routes.py
-│ ├── forms.py
-│ └── models.py
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── forms.py
+│   └── models.py
 ├── main.py
 ├── create-db.py
 ├── requirements.txt
 └── README.md
+
 
 ## 📸 Imagens
 
