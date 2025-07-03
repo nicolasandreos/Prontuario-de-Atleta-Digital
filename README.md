@@ -22,25 +22,16 @@ A aplicação permite cadastrar, editar, excluir e buscar prontuários(CRUD), al
 * ✅ Filtro por nome com campo de busca para localizar prontuários
 * ✅ Interface responsiva para dispositivos móveis e desktops
 
-## 📁 Prontuario-de-Pacientes/
-├── static/
-│   ├── css/
-│   ├── fotos_gerais/
-│   └── ...
-├── templates/
-│   ├── base.html
-│   ├── login.html
-│   └── ...
-├── spfcproject/
-│   ├── __init__.py
-│   ├── routes.py
-│   ├── forms.py
-│   └── models.py
-├── main.py
-├── create-db.py
-├── requirements.txt
-└── README.md
-
+## Arquivos
+- `main.py`: Arquivo principal que inicia o servidor Flask.
+- `create-db.py`: Cria o banco de dados e um usuário padrão.
+- `spfcproject/`: Pasta com a lógica principal do sistema.
+  - `routes.py`: Define as rotas do sistema.
+  - `models.py`: Define os modelos do banco de dados.
+  - `forms.py`: Define os formulários do sistema.
+  - `__init__.py`: Inicializa o app Flask e configurações.
+- `templates/`: Contém os arquivos HTML do frontend.
+- `static/`: Contém arquivos estáticos (CSS, imagens).
 
 ## 📸 Imagens
 
